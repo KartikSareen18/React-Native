@@ -4,6 +4,7 @@ import Menu from './MenuComponent';
 import Dishdetail from './DishdetailComponent';
 import About from './AboutComponent';
 import Contact from './ContactComponent';
+import Reservation from './ReservationComponent';
 import {View,Platform,Image,StyleSheet,ScrollView,Text} from 'react-native';
 import { createStackNavigator ,createDrawerNavigator,DrawerItems,SafeAreaView} from 'react-navigation';
 import { Icon } from 'react-native-elements';
@@ -68,7 +69,7 @@ const HomeNavigator = createStackNavigator({
 }
 );
 
-const contactNavigator = createStackNavigator({
+const ContactNavigator = createStackNavigator({
     Contact:{screen:Contact}
 
 },{
@@ -86,8 +87,25 @@ const contactNavigator = createStackNavigator({
     })
 });
 
-const aboutNavigator = createStackNavigator({
+const AboutNavigator = createStackNavigator({
     About:{screen:About}
+},{
+    navigationOptions:({navigation})=>( {
+        headerStyle: {
+            backgroundColor: "#512DA8"
+        },
+        headerTintColor: '#fff',
+        headerTitleStyle: {
+            color: "#fff"            
+        },
+        headerLeft: <Icon name='menu' size={24} 
+        color='white'
+        onPress={() => navigation.toggleDrawer()}/>
+    })
+});
+
+const ReservationNavigator = createStackNavigator({
+    Reservation:{screen:Reservation}
 },{
     navigationOptions:({navigation})=>( {
         headerStyle: {
@@ -135,7 +153,7 @@ const MainNavigator = createDrawerNavigator({
         }
     },
     About:{
-        screen:aboutNavigator,
+        screen:AboutNavigator,
         navigationOptions:{
             title:'About Us',
             drawerLabel:'About Us',
@@ -155,7 +173,7 @@ const MainNavigator = createDrawerNavigator({
         }
     },
     Contact:{
-        screen:contactNavigator,
+        screen:ContactNavigator,
         navigationOptions:{
             title:'Contact Us',
             drawerLabel:'Contact Us',
@@ -163,7 +181,18 @@ const MainNavigator = createDrawerNavigator({
                 <Icon name='address-card' type='font-awesome' size={22} color={tintColor}/>
             ) 
         }
+    },
+    Reservation:{
+        screen:ReservationNavigator,
+        navigationOptions:{
+            title:'Reserve Table',
+            drawerLabel:'Reserve Table',
+            drawerIcon:({ tintColor })=>(
+                <Icon name='cutlery' type='font-awesome' size={24} color={tintColor}/>
+            ) 
+        }
     }
+
 },{
     drawerBackgroundColor: '#D1C4E9',
     contentComponent:CustomDrawerContentComponent 
