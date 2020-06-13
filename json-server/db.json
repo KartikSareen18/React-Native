@@ -203,157 +203,20 @@
       "date": "2011-12-02T17:57:28.556094Z"
     },
     {
-      "dishId": {
-        "dispatchConfig": null,
-        "_targetInst": null,
-        "_dispatchListeners": null,
-        "_dispatchInstances": null,
-        "type": null,
-        "target": null,
-        "eventPhase": null,
-        "bubbles": null,
-        "cancelable": null,
-        "defaultPrevented": null,
-        "isTrusted": null,
-        "nativeEvent": null
-      },
-      "rating": 4,
-      "author": "Kartik",
-      "comment": "Good",
-      "date": "2020-06-13T08:19:40.032Z",
-      "id": 20
-    },
-    {
-      "dishId": {
-        "dispatchConfig": null,
-        "_targetInst": null,
-        "_dispatchListeners": null,
-        "_dispatchInstances": null,
-        "type": null,
-        "target": null,
-        "eventPhase": null,
-        "bubbles": null,
-        "cancelable": null,
-        "defaultPrevented": null,
-        "isTrusted": null,
-        "nativeEvent": null
-      },
+      "dishId": 0,
       "rating": 4,
       "author": "Kartik",
       "comment": "Test comment",
-      "date": "2020-06-13T08:21:13.567Z",
+      "date": "2020-06-13T13:03:06.834Z",
+      "id": 20
+    },
+    {
+      "dishId": 3,
+      "rating": 2,
+      "author": "Kartik",
+      "comment": "Testing",
+      "date": "2020-06-13T13:03:43.756Z",
       "id": 21
-    },
-    {
-      "dishId": {
-        "dispatchConfig": null,
-        "_targetInst": null,
-        "_dispatchListeners": null,
-        "_dispatchInstances": null,
-        "type": null,
-        "target": null,
-        "eventPhase": null,
-        "bubbles": null,
-        "cancelable": null,
-        "defaultPrevented": null,
-        "isTrusted": null,
-        "nativeEvent": null
-      },
-      "rating": 2,
-      "author": "Kartik",
-      "comment": "Test",
-      "date": "2020-06-13T08:22:17.749Z",
-      "id": 22
-    },
-    {
-      "dishId": {
-        "dispatchConfig": null,
-        "_targetInst": null,
-        "_dispatchListeners": null,
-        "_dispatchInstances": null,
-        "type": null,
-        "target": null,
-        "eventPhase": null,
-        "bubbles": null,
-        "cancelable": null,
-        "defaultPrevented": null,
-        "isTrusted": null,
-        "nativeEvent": null
-      },
-      "rating": 2,
-      "author": "Gg",
-      "comment": "Gg",
-      "date": "2020-06-13T08:22:40.401Z",
-      "id": 23
-    },
-    {
-      "dishId": {
-        "dispatchConfig": null,
-        "_targetInst": null,
-        "_dispatchListeners": null,
-        "_dispatchInstances": null,
-        "type": null,
-        "target": null,
-        "eventPhase": null,
-        "bubbles": null,
-        "cancelable": null,
-        "defaultPrevented": null,
-        "isTrusted": null,
-        "nativeEvent": null
-      },
-      "rating": 1,
-      "author": "",
-      "comment": "",
-      "date": "2020-06-13T08:23:33.861Z",
-      "id": 24
-    },
-    {
-      "dishId": 0,
-      "rating": 1,
-      "author": "",
-      "comment": "",
-      "date": "2020-06-13T12:27:02.735Z",
-      "id": 25
-    },
-    {
-      "dishId": 0,
-      "rating": 4,
-      "author": "Kartik",
-      "comment": "Test",
-      "date": "2020-06-13T12:27:37.630Z",
-      "id": 26
-    },
-    {
-      "dishId": 0,
-      "rating": 3,
-      "author": "Sc",
-      "comment": "Ectcy",
-      "date": "2020-06-13T12:30:41.231Z",
-      "id": 27
-    },
-    {
-      "dishId": 0,
-      "rating": 1,
-      "author": " Jbkb",
-      "comment": "Vyvu b",
-      "date": "2020-06-13T12:31:22.577Z",
-      "id": 28
-    },
-    {
-      "dishId": 0,
-      "rating": 1,
-      "author": "",
-      "comment": "",
-      "date": "2020-06-13T12:37:57.816Z",
-      "id": 29
-    },
-    {
-      "dishId": 0,
-      "rating": 1,
-      "author": "",
-      "comment": "",
-      "date": "2020-06-13T12:47:48.288Z",
-      "id": 30
     }
   ],
   "promotions": [

@@ -103,7 +103,6 @@ class DishDetail extends Component{
     handleComment=(dishId)=>{
         console.log(JSON.stringify(this.state));
         this.toggleModal();
-        console.log(dishId);
         this.props.postComment(dishId,this.state.rating,this.state.author,this.state.comment);
     }
 
