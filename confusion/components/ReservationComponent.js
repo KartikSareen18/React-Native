@@ -5,6 +5,7 @@ import DatePicker from 'react-native-datepicker';
 import * as Animatable from 'react-native-animatable';
 import * as Permissions from 'expo-permissions';
 import { Notifications } from 'expo';
+import * as Calendar from 'expo-calendar';
 
 class Reservation extends Component{
 
@@ -27,6 +28,52 @@ class Reservation extends Component{
         this.setState({showModal:!this.state.showModal});
     }
 
+    async obtainCalendarPermission() {
+        try {
+            console.log("Getting permissions for calendar");
+            let calendarPermission = await Permissions.getAsync(Permissions.CALENDAR);
+            if (calendarPermission.status !== 'granted') {
+                calendarPermission = await Permissions.askAsync(Permissions.CALENDAR);
+                if (calendarPermission.status !== 'granted') {
+                    Alert.alert('Permission not granted to access calendars');
+                }
+            }
+            console.log("Calendar permission:" + calendarPermission);
+            return calendarPermission;
+        } catch (err) {
+            console.warn(err);
+        }
+    }
+
+    //invoked from handleReservation
+    async addReservationToCalendar(date) {
+        await this.obtainCalendarPermission();
+
+        const calendars = await Calendar.getCalendarsAsync();
+
+        const defaultCalendar = calendars[0];
+        console.log("Calendar[0]: ");
+        console.log({defaultCalendar});
+        console.log("Default calendar id:" + defaultCalendar.id);
+        const startDate = new Date(Date.parse(date));
+        const endDate = new Date(Date.parse(date) + 2*60*60*1000);
+        
+        console.log("start date: " + startDate);
+        console.log("end date: " + endDate);
+
+        const eventDetail = {
+            "title": "Con Fusion Table Reservation",
+            "startDate": startDate,
+            "endDate": endDate,
+            "timeZone": 'Asia/Hong_Kong',
+            "location": '121, Clear Water Bay Road, Clear Water Bay, Kowloon, Hong Kong'
+        }
+
+        const eventId = await Calendar.createEventAsync(defaultCalendar.id, eventDetail);
+
+        console.log("event id: " + eventId);
+    }
+
     handleReservation(){
         console.log(JSON.stringify(this.state));
         //this.toggleModal();
@@ -43,6 +90,7 @@ class Reservation extends Component{
                     text:'OK',
                     onPress:()=>{
                         this.presentLocalNotification(this.state.date);
+                        this.addReservationToCalendar(this.state.date);
                         this.resetForm();
                     }
                 }
