@@ -8,8 +8,9 @@
     "test": "jest"
   },
   "dependencies": {
+    "@react-native-community/netinfo": "5.5.1",
     "expo": "^37.0.0",
-    "expo-asset": "8.1.0",
+    "expo-asset": "8.1.5",
     "expo-image-manipulator": "8.1.0",
     "expo-image-picker": "8.1.0",
     "expo-mail-composer": "8.1.0",
